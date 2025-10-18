@@ -58,12 +58,18 @@ public class MordredItem extends SwordItem {
                     player.getX() - radius, player.getY() - radius, player.getZ() - radius,
                     player.getX() + radius, player.getY() + radius, player.getZ() + radius);
             List<LivingEntity> targets = world.getEntitiesOfClass(LivingEntity.class, area, e -> e != player && e.isAlive());
-            player.displayClientMessage(
-                    net.minecraft.network.chat.Component.literal(targets.toString()),
-                    false
-            );
+            //player.displayClientMessage(net.minecraft.network.chat.Component.literal(targets.toString()), false);
+            MobEffectInstance bindEffect = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9);
+            MobEffectInstance bindEffect2 = new MobEffectInstance(MobEffects.DARKNESS, 200,3);
+            // "for" loop: loops through every target in the array
+            for (LivingEntity target : targets){
+                target.addEffect(bindEffect);
+                target.addEffect(bindEffect2);
+            }
         }
         return InteractionResultHolder.success(stack);
     }
+
+
 
 }
