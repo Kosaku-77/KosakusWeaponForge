@@ -51,8 +51,8 @@ public class KosakusWeaponForge
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-    public static final Rarity EXOTIC = Rarity.create("exotic", ChatFormatting.DARK_RED);
-
+    public static final Rarity EXOTIC = Rarity.create("exotic", ChatFormatting.GOLD);
+    public static final Rarity ABYSSAL = Rarity.create("abyssal", ChatFormatting.DARK_RED);
 
 
     private void commonSetup(final FMLCommonSetupEvent event)

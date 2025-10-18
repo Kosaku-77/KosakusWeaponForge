@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "item/netherite_hoe/crucible_scythe",
-		"particle": "item/netherite_hoe/crucible_scythe"
+		"0": "kosakusweaponforge:item/mordred",
+		"particle": "kosakusweaponforge:item/mordred"
 	},
 	"elements": [
 		{
