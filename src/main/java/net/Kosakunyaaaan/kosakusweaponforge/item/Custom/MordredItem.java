@@ -1,5 +1,6 @@
 package net.Kosakunyaaaan.kosakusweaponforge.item.Custom;
 
+import net.Kosakunyaaaan.kosakusweaponforge.effect.ModEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -13,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -36,12 +38,8 @@ public class MordredItem extends SwordItem {
     // On-hit effects
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker){
-        MobEffectInstance darkness = new MobEffectInstance(MobEffects.DARKNESS, 80, 2);
-        MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 1);
-        MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, 80, 1);
-        target.addEffect(darkness);
-        target.addEffect(slowness);
-        target.addEffect(weakness);
+        MobEffectInstance abyssal_curse = new MobEffectInstance(ModEffects.ABYSSAL_CURSE.get(), 80, 2);
+        target.addEffect(abyssal_curse);
         return true;
     }
 
@@ -59,14 +57,13 @@ public class MordredItem extends SwordItem {
                     player.getX() + radius, player.getY() + radius, player.getZ() + radius);
             List<LivingEntity> targets = world.getEntitiesOfClass(LivingEntity.class, area, e -> e != player && e.isAlive());
             //player.displayClientMessage(net.minecraft.network.chat.Component.literal(targets.toString()), false);
-            MobEffectInstance bindEffect = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9);
-            MobEffectInstance bindEffect2 = new MobEffectInstance(MobEffects.DARKNESS, 200,3);
+            MobEffectInstance abyssalBind = new MobEffectInstance(ModEffects.ABYSSAL_CURSE.get(), 240, 9);
             // "for" loop: loops through every target in the array
             for (LivingEntity target : targets){
-                target.addEffect(bindEffect);
-                target.addEffect(bindEffect2);
+                target.addEffect(abyssalBind);
+
+                }
             }
-        }
         return InteractionResultHolder.success(stack);
     }
 

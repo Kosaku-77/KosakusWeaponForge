@@ -1,10 +1,12 @@
 package net.Kosakunyaaaan.kosakusweaponforge;
 
 import com.mojang.logging.LogUtils;
+import net.Kosakunyaaaan.kosakusweaponforge.effect.ModEffects;
 import net.Kosakunyaaaan.kosakusweaponforge.item.ModCreativeModeTabs;
 import net.Kosakunyaaaan.kosakusweaponforge.item.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,6 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -39,6 +42,8 @@ public class KosakusWeaponForge
 
         ModItems.register(modEventBus);
 
+        ModEffects.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -53,7 +58,6 @@ public class KosakusWeaponForge
     }
     public static final Rarity EXOTIC = Rarity.create("exotic", ChatFormatting.GOLD);
     public static final Rarity ABYSSAL = Rarity.create("abyssal", ChatFormatting.DARK_RED);
-
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {

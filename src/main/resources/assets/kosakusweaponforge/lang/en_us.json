@@ -2,6 +2,7 @@
   "item.kosakusweaponforge.mordred": "Mordred",
   "creativetab.kosakus_weapon_forge": "Kosaku's Weapon Forge",
   "tooltip.shift.kosakusweaponforge.mordred": "Lacerate this world",
-  "tooltip.kosakusweaponforge.mordred": "[Shift]"
+  "tooltip.kosakusweaponforge.mordred": "[Shift]",
+  "effect.kosakusweaponforge.abyssal_curse": "Abyssal Curse"
 
 }

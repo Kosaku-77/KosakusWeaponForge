@@ -15,7 +15,7 @@ public class ModItems {
     // public static final Item NETHERITE_SWORD = registerItem("netherite_sword", new SwordItem(Tiers.NETHERITE, 3, -2.4F, (new Item.Properties()).fireResistant()));
 
     public static final RegistryObject<Item> MORDRED = ITEMS.register("mordred",
-            () -> new MordredItem(Tiers.NETHERITE, 15, -3.0f, new Item.Properties()
+            () -> new MordredItem(Tiers.NETHERITE, 10, -3.0f, new Item.Properties()
                     .rarity(KosakusWeaponForge.ABYSSAL)
                     .stacksTo(1)
                     .defaultDurability(-1)
